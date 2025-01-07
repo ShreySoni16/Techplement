@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quote of the Day</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="notification" id="notification"></div>
+    <div class="container">
+      <h1>Quote of the Day</h1>
+
+      <div class="categories" id="categories">
+        <span class="category-tag active" data-category="all">All</span>
+        <span class="category-tag" data-category="motivation">Motivation</span>
+        <span class="category-tag" data-category="wisdom">Wisdom</span>
+        <span class="category-tag" data-category="life">Life</span>
+      </div>
+
+      <div class="quote-box">
+        <p class="quote-text" id="mainQuote"></p>
+        <p class="quote-author" id="mainAuthor"></p>
+        <div class="feature-buttons">
+          <button onclick="getRandomQuote()" id="newQuoteBtn">New Quote</button>
+          <button onclick="copyQuote()" class="copy-button">Copy</button>
+          <button onclick="toggleFavorite()" id="favoriteBtn">❤️ Save</button>
+          <button onclick="shareQuote()" class="share-button">Share</button>
+        </div>
+      </div>
+
+      <div class="search-box">
+        <form class="search-form" onsubmit="searchQuotes(event)">
+          <input
+            type="text"
+            id="authorSearch"
+            placeholder="Search quotes by author..."
+            required
+          />
+          <button type="submit">Search</button>
+        </form>
+        <div id="searchResults"></div>
+      </div>
+
+      <div class="favorites-section">
+        <h2>Favorite Quotes</h2>
+        <div id="favoritesList"></div>
+      </div>
+    </div>
+    <script src="scripts.js"></script>
+  </body>
+</html>
